@@ -1,0 +1,11 @@
+{
+ "_comment": "Evaluation config. variants = Laya question variants (names in eval/questions.py) whose max P(yes) over windows is the risk score.",
+ "window": {"size": 1400, "overlap": 200, "max_windows": 4},
+ "agg": "max",
+ "kinds": {
+  "prompt": {"variants": ["c_persona"]},
+  "tool_output": {"variants": ["c_override"]},
+  "command": {"variants": []},
+  "output": {"variants": ["shipped_sensitive_data"]}
+ }
+}

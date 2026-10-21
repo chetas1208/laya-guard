@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "BeforeTool": [
+      {
+        "matcher": "run_shell_command",
+        "hooks": [
+          { "name": "laya-guard", "type": "command", "command": "laya-guard hook --agent gemini", "timeout": 10000 }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          { "type": "command", "command": "laya-guard hook --agent claude-code --strict || exit 2", "timeout": 10 }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          { "type": "command", "command": "laya-guard hook --agent claude-code --strict || exit 2", "timeout": 10 }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "WebFetch|WebSearch|Read|mcp__.*",
+        "hooks": [
+          { "type": "command", "command": "laya-guard hook --agent claude-code --strict || exit 2", "timeout": 10 }
+        ]
+      }
+    ]
+  }
+}

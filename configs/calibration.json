@@ -1,0 +1,35 @@
+{
+ "schema_version": 1,
+ "method": "platt_on_logit",
+ "fit_split": "dev",
+ "note": "p_cal = sigmoid(a*logit(clip(p_raw,1e-4,1-1e-4)) + b), where p_raw = max over the kind's risk variants and windows. Fit on dev only; base rate of the dev mixture is NOT the deployment base rate, so treat p_cal as a monotone re-scaling, not a literal probability. policy.py does not read this file yet.",
+ "kinds": {
+  "prompt": {
+   "risk_questions": [
+    "c_persona"
+   ],
+   "a": 0.6062,
+   "b": -1.8177,
+   "n_dev": 1157,
+   "dev_pos_rate": 0.34
+  },
+  "tool_output": {
+   "risk_questions": [
+    "c_override"
+   ],
+   "a": 0.031,
+   "b": 0.3298,
+   "n_dev": 267,
+   "dev_pos_rate": 0.603
+  },
+  "output": {
+   "risk_questions": [
+    "shipped_sensitive_data"
+   ],
+   "a": 0.9164,
+   "b": -0.3232,
+   "n_dev": 154,
+   "dev_pos_rate": 0.5
+  }
+ }
+}

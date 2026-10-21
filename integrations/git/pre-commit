@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# laya-guard pre-commit hook: scan ADDED lines of the staged diff for secrets (rules only, fast).
+#
+# Install:  cp integrations/git/pre-commit .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit
+#   (or: git config core.hooksPath integrations/git)
+#
+# Behaviour:
+#   block  (rule exit 20) -> commit refused
+#   review (rule exit 10) -> warning only; set LAYA_GUARD_STRICT=1 to refuse
+#   any other failure     -> commit refused (fails closed)
+# Bypass for a known false positive (a human decision): git commit --no-verify
+set -uo pipefail
+
+if command -v laya-guard >/dev/null 2>&1; then
+  guard=(laya-guard)
+elif [ -n "${LAYA_GUARD_PYTHON:-}" ]; then
+  guard=("$LAYA_GUARD_PYTHON" -m laya_guard.cli)
+else
+  echo "laya-guard pre-commit: 'laya-guard' not found on PATH (pip install laya-guard). Refusing to commit unchecked." >&2
+  exit 1
+fi
+
+# Added lines only, minus the '+++ file' headers and the leading '+'.
+added="$(git diff --cached --no-color --unified=0 --diff-filter=ACMR | grep -E '^\+' | grep -vE '^\+\+\+ ' | sed 's/^+//')" || true
+[ -z "$added" ] && exit 0
+
+out="$(printf '%s\n' "$added" | "${guard[@]}" check --kind output --no-laya --json 2>&1)"
+code=$?
+
+case "$code" in
+  0) exit 0 ;;
+  10)
+    echo "laya-guard pre-commit: REVIEW - possible secret in staged changes:" >&2
+    printf '%s\n' "$out" | grep -E '"(rule_id|excerpt)"' | head -10 >&2
+    if [ "${LAYA_GUARD_STRICT:-0}" = "1" ]; then
+      echo "LAYA_GUARD_STRICT=1: refusing commit. Remove the value, or use --no-verify if it is a false positive." >&2
+      exit 1
+    fi
+    echo "Commit allowed (set LAYA_GUARD_STRICT=1 to refuse on review)." >&2
+    exit 0 ;;
+  20)
+    echo "laya-guard pre-commit: BLOCK - secret detected in staged changes:" >&2
+    printf '%s\n' "$out" | grep -E '"rule_id"' | sort -u | head -10 >&2
+    echo "Remove it and rotate the credential if it was ever pushed. False positive? git commit --no-verify (your call)." >&2
+    exit 1 ;;
+  *)
+    echo "laya-guard pre-commit: check failed with exit $code (failing closed):" >&2
+    printf '%s\n' "$out" | head -5 >&2
+    exit 1 ;;
+esac

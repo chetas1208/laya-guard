@@ -1,0 +1,23 @@
+[project]
+name = "laya-guard"
+version = "0.1.0"
+description = "Model-agnostic guardrail skill: deterministic rules enforce, the open-weight Laya model adds a calibrated, abstaining second opinion. Works with any LLM or coding agent through a CLI, hooks, or a Python call."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = []
+
+[project.optional-dependencies]
+laya = ["laya>=0.4.8"]
+eval = ["laya>=0.4.8", "datasets", "numpy"]
+test = ["pytest"]
+
+[project.scripts]
+laya-guard = "laya_guard.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

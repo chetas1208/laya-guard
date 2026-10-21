@@ -1,0 +1,11 @@
+{
+ "_comment": "Evaluation config. variants = Laya question variants (names in eval/questions.py) whose max P(yes) is the risk score. Round 0 = laya-guard as shipped (policy.py defaults).",
+ "window": {"size": 1400, "overlap": 200, "max_windows": 4},
+ "agg": "max",
+ "kinds": {
+  "prompt": {"variants": ["shipped_jailbreak", "shipped_prompt_injection"]},
+  "tool_output": {"variants": ["shipped_agent_directed", "shipped_jailbreak"]},
+  "command": {"variants": []},
+  "output": {"variants": ["shipped_sensitive_data"]}
+ }
+}

@@ -1,0 +1,240 @@
+[
+ {
+  "kind": "command",
+  "source": "AnishJoshi/nl2bash-custom",
+  "split": "dev",
+  "label": 0,
+  "n": 72
+ },
+ {
+  "kind": "command",
+  "source": "AnishJoshi/nl2bash-custom",
+  "split": "test",
+  "label": 0,
+  "n": 78
+ },
+ {
+  "kind": "command",
+  "source": "synthetic/commands",
+  "split": "dev",
+  "label": 0,
+  "n": 110
+ },
+ {
+  "kind": "command",
+  "source": "synthetic/commands",
+  "split": "dev",
+  "label": 1,
+  "n": 103
+ },
+ {
+  "kind": "command",
+  "source": "synthetic/commands",
+  "split": "test",
+  "label": 0,
+  "n": 115
+ },
+ {
+  "kind": "command",
+  "source": "synthetic/commands",
+  "split": "test",
+  "label": 1,
+  "n": 108
+ },
+ {
+  "kind": "command",
+  "source": "westenfelder/NL2SH-ALFA",
+  "split": "dev",
+  "label": 0,
+  "n": 266
+ },
+ {
+  "kind": "command",
+  "source": "westenfelder/NL2SH-ALFA",
+  "split": "test",
+  "label": 0,
+  "n": 276
+ },
+ {
+  "kind": "output",
+  "source": "synthetic/secrets",
+  "split": "dev",
+  "label": 0,
+  "n": 77
+ },
+ {
+  "kind": "output",
+  "source": "synthetic/secrets",
+  "split": "dev",
+  "label": 1,
+  "n": 77
+ },
+ {
+  "kind": "output",
+  "source": "synthetic/secrets",
+  "split": "test",
+  "label": 0,
+  "n": 91
+ },
+ {
+  "kind": "output",
+  "source": "synthetic/secrets",
+  "split": "test",
+  "label": 1,
+  "n": 91
+ },
+ {
+  "kind": "prompt",
+  "source": "deepset/prompt-injections",
+  "split": "dev",
+  "label": 0,
+  "n": 197
+ },
+ {
+  "kind": "prompt",
+  "source": "deepset/prompt-injections",
+  "split": "dev",
+  "label": 1,
+  "n": 123
+ },
+ {
+  "kind": "prompt",
+  "source": "deepset/prompt-injections",
+  "split": "test",
+  "label": 0,
+  "n": 202
+ },
+ {
+  "kind": "prompt",
+  "source": "deepset/prompt-injections",
+  "split": "test",
+  "label": 1,
+  "n": 140
+ },
+ {
+  "kind": "prompt",
+  "source": "jackhhao/jailbreak-classification",
+  "split": "dev",
+  "label": 0,
+  "n": 109
+ },
+ {
+  "kind": "prompt",
+  "source": "jackhhao/jailbreak-classification",
+  "split": "dev",
+  "label": 1,
+  "n": 113
+ },
+ {
+  "kind": "prompt",
+  "source": "jackhhao/jailbreak-classification",
+  "split": "test",
+  "label": 0,
+  "n": 140
+ },
+ {
+  "kind": "prompt",
+  "source": "jackhhao/jailbreak-classification",
+  "split": "test",
+  "label": 1,
+  "n": 135
+ },
+ {
+  "kind": "prompt",
+  "source": "sahil2801/CodeAlpaca-20k",
+  "split": "dev",
+  "label": 0,
+  "n": 231
+ },
+ {
+  "kind": "prompt",
+  "source": "sahil2801/CodeAlpaca-20k",
+  "split": "test",
+  "label": 0,
+  "n": 219
+ },
+ {
+  "kind": "prompt",
+  "source": "synthetic/prompts",
+  "split": "dev",
+  "label": 0,
+  "n": 38
+ },
+ {
+  "kind": "prompt",
+  "source": "synthetic/prompts",
+  "split": "test",
+  "label": 0,
+  "n": 46
+ },
+ {
+  "kind": "prompt",
+  "source": "xTRam1/safe-guard-prompt-injection",
+  "split": "dev",
+  "label": 0,
+  "n": 189
+ },
+ {
+  "kind": "prompt",
+  "source": "xTRam1/safe-guard-prompt-injection",
+  "split": "dev",
+  "label": 1,
+  "n": 157
+ },
+ {
+  "kind": "prompt",
+  "source": "xTRam1/safe-guard-prompt-injection",
+  "split": "test",
+  "label": 0,
+  "n": 209
+ },
+ {
+  "kind": "prompt",
+  "source": "xTRam1/safe-guard-prompt-injection",
+  "split": "test",
+  "label": 1,
+  "n": 143
+ },
+ {
+  "kind": "tool_output",
+  "source": "local/python-package-READMEs",
+  "split": "dev",
+  "label": 0,
+  "n": 49
+ },
+ {
+  "kind": "tool_output",
+  "source": "local/python-package-READMEs",
+  "split": "test",
+  "label": 0,
+  "n": 53
+ },
+ {
+  "kind": "tool_output",
+  "source": "synthetic/tool_output",
+  "split": "dev",
+  "label": 0,
+  "n": 57
+ },
+ {
+  "kind": "tool_output",
+  "source": "synthetic/tool_output",
+  "split": "dev",
+  "label": 1,
+  "n": 161
+ },
+ {
+  "kind": "tool_output",
+  "source": "synthetic/tool_output",
+  "split": "test",
+  "label": 0,
+  "n": 63
+ },
+ {
+  "kind": "tool_output",
+  "source": "synthetic/tool_output",
+  "split": "test",
+  "label": 1,
+  "n": 151
+ }
+]

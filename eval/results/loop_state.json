@@ -1,0 +1,43 @@
+{
+ "prompt": {
+  "rules_recall": 0.229,
+  "rules_fpr": 0.0013,
+  "rules_f1": 0.3719,
+  "auroc": 0.9227,
+  "ap": 0.898,
+  "laya_recall_at_fpr1": 0.5929,
+  "laya_fpr": 0.0092,
+  "combined_recall_at_fpr1": 0.6285,
+  "combined_fpr": 0.0092,
+  "threshold_fpr1": 0.9943
+ },
+ "tool_output": {
+  "rules_recall": 0.764,
+  "rules_fpr": 0.0,
+  "rules_f1": 0.8662,
+  "auroc": 0.525,
+  "ap": 0.6366,
+  "laya_recall_at_fpr1": 0.0,
+  "laya_fpr": 0.0,
+  "combined_recall_at_fpr1": 0.764,
+  "combined_fpr": 0.0,
+  "threshold_fpr1": 1.0
+ },
+ "command": {
+  "rules_recall": 0.8738,
+  "rules_fpr": 0.0,
+  "rules_f1": 0.9326
+ },
+ "output": {
+  "rules_recall": 1.0,
+  "rules_fpr": 0.0,
+  "rules_f1": 1.0,
+  "auroc": 0.8829,
+  "ap": 0.8802,
+  "laya_recall_at_fpr1": 0.2987,
+  "laya_fpr": 0.0,
+  "combined_recall_at_fpr1": 1.0,
+  "combined_fpr": 0.0,
+  "threshold_fpr1": 0.9214
+ }
+}
